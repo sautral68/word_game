@@ -1,0 +1,31 @@
+{
+  "name": "word-games-desktop",
+  "version": "1.0.0",
+  "description": "Intelligent Word Games Desktop App",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "concurrently -k \"next dev --port 3001\" \"wait-on tcp:3001 && cross-env IS_DEV=1 electron .\"",
+    "build": "next build && electron-builder",
+    "build:win": "next build && electron-builder --win",
+    "build:linux": "next build && electron-builder --linux",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.8",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3",
+    "next": "14.2.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "typescript": "^5",
+    "wait-on": "^7.2.0"
+  },
+  "dependencies": {
+    "sql.js": "^1.14.1"
+  }
+}

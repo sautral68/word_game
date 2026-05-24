@@ -1,0 +1,32 @@
+appId: com.wordgames.desktop
+productName: Word Games
+copyright: Copyright 2025
+
+directories:
+  output: dist
+  buildResources: build
+
+files:
+  - electron/**/*
+  - out/**/*
+  - node_modules/sql.js/**/*
+  - package.json
+
+asarUnpack:
+  - "node_modules/sql.js/dist/*.wasm"
+
+win:
+  target:
+    - target: portable
+      arch:
+        - x64
+  icon: build/icon.ico
+
+linux:
+  target:
+    - AppImage
+  icon: build/icon.png
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
